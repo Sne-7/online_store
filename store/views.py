@@ -14,3 +14,17 @@ from django.shortcuts import render
 
 def homepage(request):
     return render(request, 'homepage.html')
+
+
+class ProductListView:
+    pass
+from django.http import JsonResponse
+
+def product_list(request):
+    data = {
+        "products": [
+            {"id": 1, "name": "T-shirt", "price": 499},
+            {"id": 2, "name": "Jeans", "price": 899},
+        ]
+    }
+    return JsonResponse(data)
