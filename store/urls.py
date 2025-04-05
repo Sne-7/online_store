@@ -3,7 +3,8 @@ from django.urls import path
 from store.views import homepage
 from .views import ProductListView# ✅ Import view
 from django.urls import path, include
-from .views import product_list
+from .views import ProductListView  # ✅ The correct class-based view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
