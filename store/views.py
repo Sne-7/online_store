@@ -10,3 +10,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+from django.shortcuts import render
+
+def homepage(request):
+    return render(request, 'homepage.html')

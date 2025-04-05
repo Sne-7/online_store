@@ -1,11 +1,8 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ProductViewSet, OrderViewSet
-
-router = DefaultRouter()
-router.register(r'products', ProductViewSet)
-router.register(r'orders', OrderViewSet)  # New order endpoint
+from django.contrib import admin
+from django.urls import path
+from store.views import homepage  # ✅ Import view
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('', homepage, name='home'),  # ✅ Use the homepage view
 ]
